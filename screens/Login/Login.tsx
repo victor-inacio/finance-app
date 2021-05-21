@@ -1,3 +1,4 @@
+import { StackNavigationProp } from '@react-navigation/stack';
 import * as React from 'react';
 import {
 
@@ -12,7 +13,11 @@ import {
 
 } from './styles';
 
-const Login: React.FC = () => {
+interface Props {
+    navigation: StackNavigationProp<any, any>
+}
+
+const Login: React.FC<Props> = ({ navigation }) => {
 
     return (
         <Container>
@@ -25,7 +30,7 @@ const Login: React.FC = () => {
                         Logar-se
                     </LoginButtonText>
                 </LoginButton>
-                <HaveNoAccountText>Não possui uma conta? Clique aqui.</HaveNoAccountText>
+                <HaveNoAccountText onPress={() => navigation.navigate('Register')}>Não possui uma conta? Clique aqui.</HaveNoAccountText>
             </Form>
         </Container>
     )
