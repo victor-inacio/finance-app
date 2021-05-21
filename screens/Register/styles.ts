@@ -1,15 +1,11 @@
 import styled from 'styled-components/native'
 
-const primary = '#3EC721';
-const secondary = '#2A8717';
-const terciary = '#16470C';
-
 export const Container = styled.View`
 
     flex: 1;
     justify-content: center;
     align-items: center;
-    background-color: ${primary};
+    background-color: ${props => props.theme.primary};
 
 `;
 
@@ -20,7 +16,6 @@ export const Form = styled.View`
 `;
 
 export const TextInput = styled.TextInput`
-
     background-color: white;
     width: 100%;
     padding: 10px;
@@ -36,7 +31,7 @@ export const ButtonContainer = styled.View`
 
 export const Button = styled.TouchableOpacity`
 
-    background-color: ${secondary};
+    background-color: ${props => props.theme.secondary};
     padding: 10px;
     border-radius: 2px;
     margin-bottom: 3px;
@@ -54,7 +49,7 @@ export const HaveAccountMsg = styled.Text`
 
     font-size: 15;
     text-align: center;
-    color: ${terciary};
+    color: ${props => props.theme.terciary};
     text-decoration: underline;
 
 `;
