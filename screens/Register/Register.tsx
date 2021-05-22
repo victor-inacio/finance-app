@@ -1,3 +1,4 @@
+import { StackNavigationProp } from '@react-navigation/stack';
 import * as React from 'react';
 import {
     Container,
@@ -9,7 +10,11 @@ import {
     HaveAccountMsg
 } from './styles';
 
-const Register: React.FC = () => {
+interface Props {
+    navigation: StackNavigationProp<any, any>
+}
+
+const Register: React.FC<Props> = ({ navigation }) => {
 
     return (
         <Container>
@@ -22,7 +27,7 @@ const Register: React.FC = () => {
                     <Button>
                         <ButtonText>Cadastrar-se</ButtonText>
                     </Button>
-                    <HaveAccountMsg>Já possui uma conta? Clique aqui.</HaveAccountMsg>
+                    <HaveAccountMsg onPress={() => navigation.navigate('Login')}>Já possui uma conta? Clique aqui.</HaveAccountMsg>
                 </ButtonContainer>
             </Form>
         </Container>
